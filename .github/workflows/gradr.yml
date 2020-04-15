@@ -1,33 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@olotieno
-Learn Git and GitHub without any code!
-
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-Anthonynzube /
-covid-19-estimator-php
-generated from BuildforSDG-Cohort1-Assessment/covid-19-estimator-php
-
-1
-0
-
-    0
-
-Code
-Issues 0
-Pull requests 0
-Actions
-Projects 0
-Wiki
-Security
-Insights
-covid-19-estimator-php/.github/workflows/gradr.yml
-@Anthonynzube Anthonynzube Challenges 0170f3a 2 days ago
-300 lines (237 sloc) 7.21 KB
 name: Gradr
 
 on:
@@ -59,6 +29,7 @@ jobs:
         run: |
           yarn install
           yarn add phplint
+
       - name: Run Audits
         run: yarn phplint './src/**/*.php'
 
@@ -85,6 +56,7 @@ jobs:
         run: |
           yarn install
           yarn add xml2json axios @actions/core @actions/github
+
       - name: Install PHP
         uses: shivammathur/setup-php@v1
         with:
@@ -94,6 +66,7 @@ jobs:
         run: |
           composer require --dev phpunit/phpunit
           composer require guzzlehttp/guzzle:~6.0
+
       - name: Prepare Audits
         uses: actions/checkout@v2
         with:
@@ -103,6 +76,7 @@ jobs:
       - name: Run Audits
         run: |
           vendor/bin/phpunit ./audits/ch-1 --testdox --log-junit audits/ch-1.xml
+
       - name: Report Audits
         uses: BuildforSDG-Cohort1-Assessment/jest-out@v1
         with:
@@ -133,6 +107,7 @@ jobs:
         run: |
           yarn install
           yarn add xml2json axios @actions/core @actions/github
+
       - name: Install PHP
         uses: shivammathur/setup-php@v1
         with:
@@ -142,6 +117,7 @@ jobs:
         run: |
           composer require --dev phpunit/phpunit
           composer require guzzlehttp/guzzle:~6.0
+
       - name: Prepare Audits
         uses: actions/checkout@v2
         with:
@@ -181,6 +157,7 @@ jobs:
         run: |
           yarn install
           yarn add xml2json axios @actions/core @actions/github
+
       - name: Install PHP
         uses: shivammathur/setup-php@v1
         with:
@@ -190,6 +167,7 @@ jobs:
         run: |
           composer require --dev phpunit/phpunit
           composer require guzzlehttp/guzzle:~6.0
+
       - name: Prepare Audits
         uses: actions/checkout@v2
         with:
@@ -320,18 +298,3 @@ jobs:
           challenge: ch-5
           lang: javascript
         if: always()
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
