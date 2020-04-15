@@ -1,6 +1,5 @@
 <?php
 $time1 = microtime(true);
-// required headers
 header("Access-Control-Allow-Origin: *");
 //header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
@@ -12,11 +11,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     throw new Exception('Request method must be POST!');
 }
 
-//Make sure that the content type of the POST request has been set to application/json
-$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-if (strcasecmp($contentType, 'application/json') != 0) {
-    throw new Exception('Content type must be: application/json');
-}*/
+
 
 //Receive the RAW post data.
 $content = trim(file_get_contents("php://input"));
@@ -32,6 +27,7 @@ $decoded = json_decode($content, true);
 
 function covid19ImpactEstimator($data)
 {
+
 
     if (!empty($data)) {
         // set response code - 200 OK
@@ -176,3 +172,7 @@ function dollarsInFlight($infectionsByRequestedTime,$periodType, $timeToElapse,
     $dollars =  ($infectionsByRequestedTime * $avgDailyIncomeInUSD * $avgDailyIncomePopulation) / $days;
     return floor($dollars);
 }
+=======
+  return $data;
+}
+
